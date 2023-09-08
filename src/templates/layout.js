@@ -2,8 +2,6 @@ import React from 'react';
 import is from 'prop-types';
 import styled from '@emotion/styled';
 import { Helmet } from 'react-helmet';
-import Header from '../components/header';
-import Footer from '../components/footer';
 import Wrap from '../components/wrap';
 import useSiteSettings from '../hooks/useSiteSettings';
 import SearchForm from '../components/search-form';
@@ -34,8 +32,6 @@ export default function Layout(props) {
   return (
     <>
       <UpperContainer>
-        <Header links={settings.headerLinks} />
-
         {props.withSearch && (
           <SearchContainer>
             <SearchWrap>
@@ -46,8 +42,6 @@ export default function Layout(props) {
       </UpperContainer>
 
       <Wrap>{props.children}</Wrap>
-
-      <Footer links={settings.headerLinks} />
 
       <CookieConsent />
 
